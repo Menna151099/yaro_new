@@ -1,0 +1,13 @@
+<div class="home-grid">
+  <app-headerplaces [title]="tourData?.title"></app-headerplaces>
+
+  <div class="home-content">
+
+    <app-card-descrip [video]="tourData?.media[0]?.url" [title]="tourData?.title" [prices]="tourData?.prices" [pickUpAndDropOff]="tourData?.pickUpAndDropOff" [details]="tourData?.details" [id]="tourData?._id" [fullDay]="tourData?.fullDay" [note]="tourData?.note" [availability]="tourData?.availability" [city]="tourData?.city" [descriptions]="tourData?.description" [duration]="tourData?.duration"
+      [type]="tourData?.type"></app-card-descrip>
+
+
+    <app-cardreview [id]="tourData?._id" [reviews]="tourData?.reviews"></app-cardreview>
+
+  </div>
+</div>

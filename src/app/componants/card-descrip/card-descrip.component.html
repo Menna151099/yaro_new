@@ -1,0 +1,125 @@
+<div class="col-lg-8">
+  <div class="placesDetails__content">
+    <div class="placesDetails__text">
+      <div class="placesDetails__title">
+        <div class="book">
+          <h2>{{ title }}</h2>
+          <button class="CartBtn">
+            <span class="IconContainer">
+              <svg viewBox="0 0 13 13" width="18px">
+                <path fill="white"
+                  d="M1.55989957,5.41666667 L5.51582215,5.41666667 L4.47015462,0.108333333 L4.47015462,0.108333333 C4.47015462,0.0634601974 4.49708054,0.0249592654 4.5354546,0.00851337035 L4.57707145,0 L5.36229752,0 C5.43359776,0 5.50087375,0.028779451 5.55026392,0.0782711996 L5.59317877,0.134368264 L7.13659662,2.81558333 L8.29565964,2.81666667 C8.53185377,2.81666667 8.72332694,3.01067661 8.72332694,3.25 C8.72332694,3.48932339 8.53185377,3.68333333 8.29565964,3.68333333 L7.63589819,3.68225 L8.63450135,5.41666667 L11.9308317,5.41666667 C12.5213171,5.41666667 13,5.90169152 13,6.5 C13,7.09830848 12.5213171,7.58333333 11.9308317,7.58333333 L8.63450135,7.58333333 L7.63589819,9.31666667 L8.29565964,9.31666667 C8.53185377,9.31666667 8.72332694,9.51067661 8.72332694,9.75 C8.72332694,9.98932339 8.53185377,10.1833333 8.29565964,10.1833333 L7.13659662,10.1833333 L5.59317877,12.8656317 C5.55725264,12.9280353 5.49882018,12.9724157 5.43174295,12.9907056 L5.36229752,13 L4.57707145,13 L4.55610333,12.9978962 C4.51267695,12.9890959 4.48069792,12.9547924 4.47230803,12.9134397 L4.47223088,12.8704208 L5.51582215,7.58333333 L1.55989957,7.58333333 L0.891288881,8.55114605 C0.853775374,8.60544678 0.798421006,8.64327676 0.73629202,8.65879796 L0.672314689,8.66666667 L0.106844414,8.66666667 L0.0715243949,8.66058466 L0.0715243949,8.66058466 C0.0297243066,8.6457608 0.00275502199,8.60729104 0,8.5651586 L0.00593007386,8.52254537 L0.580855011,6.85813984 C0.64492547,6.67265611 0.6577034,6.47392717 0.619193545,6.28316421 L0.580694768,6.14191703 L0.00601851064,4.48064746 C0.00203480725,4.4691314 0,4.45701613 0,4.44481314 C0,4.39994001 0.0269259152,4.36143908 0.0652999725,4.34499318 L0.106916826,4.33647981 L0.672546853,4.33647981 C0.737865848,4.33647981 0.80011301,4.36066329 0.848265401,4.40322477 L0.89131128,4.45169723 L1.55989957,5.41666667 Z">
+                </path>
+              </svg>
+            </span>
+            <a routerLink="/booking/{{id}}">
+              <p class="text">Book Tour</p>
+            </a>
+          </button>
+        </div>
+        <div class="star">
+          <p>
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{city}}, Egypt.
+          </p>
+          <div class="placesDetails__rating__widget">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <span>(120k Rating)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="placesDetails__desc">
+        <h4>Description</h4>
+        <p>{{descriptions}}</p>
+      </div>
+
+      <div class="placesDetails__info">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 placesDetails__info__item">
+            <img src="assets/img/info-1.webp" alt>
+            <h6>120 Minutes Fly</h6>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 placesDetails__info__item">
+            <img src="assets/img/info-3.webp" alt>
+            <h6>Safe & Confidential</h6>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 placesDetails__info__item">
+            <img src="assets/img/info-6.webp" alt>
+            <h6>Free Wifi</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="placesDetails__video">
+        <h4>Gallery & Videos</h4>
+        <div class="placesDetails__video__pop" (click)="openPopup()">
+          <a class="play-btn">
+            <i class="fa fa-play"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="placesDetails__desc">
+        <h4>Tour details</h4>
+        <p>{{details}}</p>
+        <ul>
+          <li>Duration: {{duration}}</li>
+          <li>Type: {{ type }}</li>
+          <li>Availability: {{availability}}</li>
+          <li>Pick up & drop off: {{pickUpAndDropOff}}</li>
+        </ul>
+        <h5>Prices Quoted Per Person in U.S.D ($)</h5>
+        <ul class="package p-0 pt-4">
+          <ng-container *ngIf="prices">
+            <p class="detael">Private Tour With Lunch</p>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Single Person = {{ prices.privateTourWithLunch.single }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> 2 People = {{ prices.privateTourWithLunch.twoPeople }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> From 3 to 5 People = {{ prices.privateTourWithLunch.threeToFive }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Above 6 People = {{ prices.privateTourWithLunch.aboveSix }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Child From 6 to 11 Y = {{ prices.privateTourWithLunch.childSixToEleven }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Child Under 6 Y = {{ prices.privateTourWithLunch.childUnderSix }} $</li>
+
+            <p class="detael">Private Tour Without Lunch</p>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Single Person = {{ prices.privateTourWithoutLunch.single }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> 2 People = {{ prices.privateTourWithoutLunch.twoPeople }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> From 3 to 5 People = {{ prices.privateTourWithoutLunch.threeToFive }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Above 6 People = {{ prices.privateTourWithoutLunch.aboveSix }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Child From 6 to 11 Y = {{ prices.privateTourWithoutLunch.childSixToEleven }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Child Under 6 Y = {{ prices.privateTourWithoutLunch.childUnderSix }} $</li>
+
+            <p class="detael">Private Car + Tour Guide</p>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Single Person = {{ prices.privateTourGuide.single }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> 2 People = {{ prices.privateTourGuide.twoPeople }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> From 3 to 5 People = {{ prices.privateTourGuide.threeToFive }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Above 6 People = {{ prices.privateTourGuide.aboveSix }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Child From 6 to 11 Y = {{ prices.privateTourGuide.childSixToEleven }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Child Under 6 Y = {{ prices.privateTourGuide.childUnderSix }} $</li>
+
+            <p class="detael">Only Private Car with Driver</p>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Single Person = {{ prices.privateCarWithDriver.single }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> From 2 to 5 People = {{ prices.privateCarWithDriver.twoPeople }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> From 6 to 15 People = {{ prices.privateCarWithDriver.threeToFive }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Child From 6 to 11 Y = {{ prices.privateCarWithDriver.childSixToEleven }} $</li>
+            <li><i class="fa fa-briefcase" aria-hidden="true"></i> Child Under 6 Y = {{ prices.privateCarWithDriver.childUnderSix }} $</li>
+          </ng-container>
+        </ul>
+
+        <hr>
+        <h4 class="tour">Full day Tour to {{title}} from Cairo</h4>
+        <p>
+          {{fullDay}}
+        </p><span class="color">Note:</span>{{note}}
+      </div>
+      <!-- Popup video -->
+      <div class="video-popup" [ngClass]="{'show': isPopupOpen}">
+        <div class="video-popup__content">
+          <span class="video-popup__close" (click)="closePopup()">&times;</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

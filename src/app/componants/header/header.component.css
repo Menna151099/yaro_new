@@ -1,0 +1,183 @@
+header {
+  position: absolute;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 9;
+}
+
+.container {
+  width: 100%;
+  padding: 0 85px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: end;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.right-p li, .right-p li a {
+  color: #ddd;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+span{
+  padding-left: 10px;
+}
+
+#logo img {
+  width: 150px;
+  display: flex;
+  align-items: start;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  color: #ddd;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.menu li.active a, .menu li a:hover {
+  color: #ffca39;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #ffca39;
+  color: #fff;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.toggle {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .menu {
+    flex-direction: column;
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+    font-size: 24px;
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .toggle.active + .menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 10px 0;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  #logo img {
+    width: 120px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    background: #333;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .menu li {
+    margin: 5px 0;
+  }
+
+  .menu li a {
+    color: #d1cfcf;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+  }
+
+  .menu li a:hover {
+    background: #ffca39;
+    color: #fff;
+  }
+
+  .toggle {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    background: #ffca39;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .toggle.active + .menu {
+    display: flex;
+  }
+
+  .right-p {
+    font-size: 12px;
+  }
+}

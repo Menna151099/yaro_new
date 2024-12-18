@@ -1,0 +1,74 @@
+<div class="placesDetails__rating">
+  <h4>Rating</h4>
+  <div class="row">
+    <div class="col-lg-2">
+      <div class="placesDetails__rating__left">
+        <!-- Display the calculated average rating -->
+        <h2>{{ averageRating | number: '1.1-1' }}</h2> <!-- Display average with 1 decimal place -->
+        <div class="rating">
+          <i *ngFor="let star of [].constructor(averageRating); let i = index" class="fa fa-star" aria-hidden="true"></i>
+          <!-- Fill stars based on the average rating -->
+          <i *ngFor="let star of [].constructor(5 - averageRating); let i = index" class="fa fa-star-o" aria-hidden="true"></i>
+        </div>
+        <!-- Display the total number of reviews -->
+        <p>({{ totalReviews }} Ratings)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comment-section">
+  <h4>Comments</h4>
+  <p></p>
+  <div *ngFor="let review of reviews" class="comment-item">
+    <div class="comment-text">
+      <span>{{ review.createdAt | date: 'mediumDate' }}</span>
+      <div class="content">
+        <h5 class="m-0">{{ review.user.firstName }} {{ review.user.lastName }}</h5>
+        <div class="rating mt-0 px-2">
+          <i *ngFor="let star of [].constructor(review.rating); let i = index" class="fa fa-star" aria-hidden="true"></i>
+        </div>
+      </div>
+      <p>{{ review.comment }}</p>
+
+      <div class="media-section">
+        <div class="media-gallery">
+          <div *ngFor="let media of review.media" class="media-item">
+            <img *ngIf="media.type === 'image'" [src]="media.url" alt="review media" class="media-img" />
+            <video *ngIf="media.type === 'video'" controls class="media-video">
+              <source [src]="media.url" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="review-section">
+    <h4>Add Review</h4>
+    <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+      <div>
+        <label for="rating">Rating</label>
+        <input type="number" formControlName="rating" placeholder="Rating (1-5)" min="1" max="5">
+        <div *ngIf="reviewForm.get('rating')?.invalid && reviewForm.get('rating')?.touched" class="error">
+          Rating must be between 1 and 5.
+        </div>
+      </div>
+
+      <div>
+        <textarea formControlName="comment" placeholder="Comment"></textarea>
+        <div *ngIf="reviewForm.get('comment')?.invalid && reviewForm.get('comment')?.touched" class="error">
+          Comment must be at least 10 characters.
+        </div>
+      </div>
+
+      <div>
+        <label for="media">Upload Media</label>
+        <input type="file" (change)="onFileSelect($event)" multiple>
+      </div>
+
+      <button type="submit" class="submit-btn" [disabled]="reviewForm.invalid">Submit Now</button>
+    </form>
+  </div>
+</div>

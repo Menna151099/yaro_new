@@ -1,0 +1,145 @@
+<div class="booking-container">
+     <app-headerbooking></app-headerbooking>
+
+     <div class="form-container">
+          <h1><i class="fas fa-calendar-alt"></i> Booking Form</h1>
+
+          <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+               <!-- Full Name -->
+               <div class="form-group">
+                    <label for="paymentName">Full Name</label>
+                    <input type="text" id="paymentName" formControlName="paymentName" placeholder="Enter your full name" />
+                    <div *ngIf="bookingForm.get('paymentName')?.invalid && bookingForm.get('paymentName')?.touched">
+                         <small *ngIf="bookingForm.get('paymentName')?.errors?.['required']">Full Name is required.</small>
+                         <small *ngIf="bookingForm.get('paymentName')?.errors?.['minlength']">
+                              Full Name must be at least 3 characters long.
+                         </small>
+                    </div>
+               </div>
+
+               <!-- Email -->
+               <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" formControlName="email" placeholder="Enter your email" />
+                    <div *ngIf="bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched">
+                         <small *ngIf="bookingForm.get('email')?.errors?.['required']">Email is required.</small>
+                         <small *ngIf="bookingForm.get('email')?.errors?.['email']">Invalid email format.</small>
+                    </div>
+               </div>
+
+               <!-- Cell Phone -->
+               <div class="form-group">
+                    <label for="cellPhone">Cell Phone</label>
+                    <input type="tel" id="cellPhone" formControlName="cellPhone" placeholder="Enter your phone number" />
+                    <div *ngIf="bookingForm.get('cellPhone')?.invalid && bookingForm.get('cellPhone')?.touched">
+                         <small *ngIf="bookingForm.get('cellPhone')?.errors?.['required']">Cell phone is required.</small>
+                         <small *ngIf="bookingForm.get('cellPhone')?.errors?.['pattern']">Invalid phone number format.</small>
+                    </div>
+               </div>
+
+               <!-- Arrival Date -->
+               <div class="form-group">
+                    <label for="arrivalDate">Arrival Date</label>
+                    <input type="date" id="arrivalDate" formControlName="arrivalDate" />
+                    <div *ngIf="bookingForm.get('arrivalDate')?.invalid && bookingForm.get('arrivalDate')?.touched">
+                         <small *ngIf="bookingForm.get('arrivalDate')?.errors?.['required']">Arrival Date is required.</small>
+                    </div>
+               </div>
+
+               <!-- Departure Date -->
+               <div class="form-group">
+                    <label for="departureDate">Departure Date</label>
+                    <input type="date" id="departureDate" formControlName="departureDate" />
+                    <div *ngIf="bookingForm.get('departureDate')?.invalid && bookingForm.get('departureDate')?.touched">
+                         <small *ngIf="bookingForm.get('departureDate')?.errors?.['required']">Departure Date is required.</small>
+                    </div>
+               </div>
+
+               <!-- Trip Location -->
+               <div class="form-group">
+                    <label for="tripLocation">Trip Location</label>
+                    <input type="text" id="tripLocation" formControlName="tripLocation" placeholder="Enter trip location" />
+                    <div *ngIf="bookingForm.get('tripLocation')?.invalid && bookingForm.get('tripLocation')?.touched">
+                         <small *ngIf="bookingForm.get('tripLocation')?.errors?.['required']">Trip Location is required.</small>
+                    </div>
+               </div>
+
+               <!-- Adults -->
+               <div class="form-group">
+                    <label for="adults">Adults</label>
+                    <input type="number" id="adults" formControlName="adults" min="1" />
+                    <div *ngIf="bookingForm.get('adults')?.invalid && bookingForm.get('adults')?.touched">
+                         <small *ngIf="bookingForm.get('adults')?.errors?.['min']">At least 1 adult is required.</small>
+                    </div>
+               </div>
+
+               <!-- Children 6 to 11 -->
+               <div class="form-group">
+                    <label for="children6To11">Children (6 to 11)</label>
+                    <input type="number" id="children6To11" formControlName="children6To11" min="0" />
+               </div>
+
+               <!-- Children Under 6 -->
+               <div class="form-group">
+                    <label for="childrenUnder6">Children (Under 6)</label>
+                    <input type="number" id="childrenUnder6" formControlName="childrenUnder6" min="0" />
+               </div>
+
+               <!-- Transportation -->
+               <div class="form-group">
+                    <label for="transportation">Transportation</label>
+                    <select id="transportation" formControlName="transportation">
+                         <option value="" disabled>Select transportation</option>
+                         <option value="privateTourWithLunch">Private Tour with Lunch</option>
+                         <option value="privateTourWithoutLunch">Private Tour without Lunch</option>
+                    </select>
+                    <div *ngIf="bookingForm.get('transportation')?.invalid && bookingForm.get('transportation')?.touched">
+                         <small *ngIf="bookingForm.get('transportation')?.errors?.['required']">Transportation is required.</small>
+                    </div>
+               </div>
+
+               <!-- Guide -->
+               <div class="form-group">
+                    <label for="guide">Guide</label>
+                    <select id="guide" formControlName="guide">
+                         <option value="" disabled>Select guide</option>
+                         <option value="Yes">Yes</option>
+                         <option value="No">No</option>
+                    </select>
+               </div>
+
+               <!-- Car -->
+               <div class="form-group">
+                    <label for="car">Car</label>
+                    <select id="car" formControlName="car">
+                         <option value="" disabled>Select car type</option>
+                         <option value="SUV">SUV</option>
+                         <option value="Sedan">Sedan</option>
+                    </select>
+               </div>
+
+               <!-- Additional Queries -->
+               <div class="form-group">
+                    <label for="additionalQueries">Additional Queries</label>
+                    <textarea id="additionalQueries" formControlName="additionalQueries" placeholder="Enter any additional queries"></textarea>
+               </div>
+
+               <!-- Date -->
+               <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" formControlName="date" />
+               </div>
+
+               <!-- Time -->
+               <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" formControlName="time" />
+               </div>
+
+               <!-- Submit Button -->
+               <button type="submit" [disabled]="bookingForm.invalid">
+                    <i class="fas fa-check"></i> Submit Booking
+               </button>
+          </form>
+     </div>
+</div>

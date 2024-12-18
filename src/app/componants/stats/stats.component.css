@@ -1,0 +1,147 @@
+.stats {
+  background: url(../../../assets/img/stats1.jpg) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}
+
+.layer {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  height: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.stats h3.heading {
+  color: #f8f9fa;
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.stats p {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.stats-left h4 {
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.stats-left h4 span {
+  font-size: 3rem;
+  color: #f4b200;
+}
+
+.stats-right h4 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stats-right span.fa {
+  color: #fff;
+  font-size: 20px;
+  background: #f4b20094;
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  line-height: 65px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  .stats h3.heading {
+    font-size: 28px;
+  }
+
+  .stats-left h4,
+  .stats-right h4 {
+    font-size: 1.5rem;
+  }
+
+  .stats-right span.fa {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stat-grids {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats h3.heading {
+    font-size: 24px;
+  }
+
+  .stats-left h4,
+  .stats-right h4 {
+    font-size: 1.4rem;
+  }
+
+  .stats-right span.fa {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats h3.heading {
+    font-size: 20px;
+  }
+
+  .stats-left h4,
+  .stats-right h4 {
+    font-size: 1.2rem;
+  }
+
+  .stats-right span.fa {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+  }
+
+  .stats-left,
+  .stats-right {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .stats h3.heading {
+    font-size: 18px;
+  }
+
+  .stats-left h4,
+  .stats-right h4 {
+    font-size: 1rem;
+  }
+
+  .stats-right span.fa {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+  }
+
+  .stats p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,8 @@
+<div>
+  <app-header *ngIf="!hideLayout"></app-header>
+  <app-loading-screen [isLoading]="isLoading"></app-loading-screen>
+  <router-outlet></router-outlet>
+  <app-footer *ngIf="!hideLayout"></app-footer>
+  <app-footeritem *ngIf="!hideLayout"></app-footeritem>
+  <app-upbutton></app-upbutton>
+</div>

@@ -1,0 +1,161 @@
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.tab-content {
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+.place-card {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+}
+
+.place-img {
+  width: 270px;
+  max-width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 8px;
+}
+
+.place-details {
+  padding: 20px;
+  width: calc(100% - 320px);
+}
+
+.place-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-text {
+  color: #c66995;
+  font-weight: 600;
+}
+
+.description-text {
+  color: #787676;
+  margin: 0 0 1rem;
+}
+
+.price-box {
+  background-color:#661d00;
+  background-image:url(../../../assets/img/button-curve.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 200px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.price-box:hover {
+  background-color: #661d00;
+  transform: scale(1.05);
+}
+
+.price {
+  color:#feaf60;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.read-more {
+  color:#feaf60;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  padding-left: 45px;
+}
+
+@media (max-width: 992px) {
+  .tab-content {
+    padding: 10px;
+  }
+
+  .place-title {
+    font-size: 1.4rem;
+  }
+
+  .highlight-text {
+    font-size: 1rem;
+  }
+
+  .description-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .place-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .place-img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .place-details {
+    padding: 0;
+    width: 100%;
+  }
+
+  .price-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 12px;
+  }
+
+  .place-title {
+    font-size: 1.3rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  .read-more {
+    font-size: 0.8rem;
+  }
+
+  .price-box {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .place-title {
+    font-size: 1.2rem;
+  }
+
+  .price {
+    font-size: 1.4rem;
+  }
+
+  .highlight-text {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,57 @@
+<header>
+  <div class="top-head container">
+    <div class="ml-auto text-right right-p">
+      <ul class="d-flex align-items-center justify-content-end">
+        <li class="mr-3">
+          <span class="fa fa-phone"></span>
+          <a href="tel:+201118855581"> +201118855581</a> /
+          <span class="fa fa-phone"></span>
+          <a href="tel:+201033773137"> +201033773137 </a>
+        </li>
+        <li class="dropdown position-relative" *ngIf="!isLoggedIn">
+          <!-- Show Login & Signup when not logged in -->
+          <span class="fa fa-user dropdown-toggle" id="userMenu" aria-haspopup="true" aria-expanded="false"></span>
+          <ul class="dropdown-menu" aria-labelledby="userMenu">
+            <li><a routerLink="/login">Log In</a></li>
+            <li><a routerLink="/signup">Sign Up</a></li>
+          </ul>
+        </li>
+        <li *ngIf="isLoggedIn">
+          <!-- Show Logout when logged in -->
+          <span class="fa fa-user"></span>
+          <a href="javascript:void(0)" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container text-right right-p part">
+    <nav class="d-flex align-items-center justify-content-between py-3">
+      <div id="logo">
+        <a routerLink="/home">
+          <img src="assets/img/Logo-Whie.png" alt="header-logo">
+        </a>
+      </div>
+
+      <span class="toggle" (click)="toggleMenu()">
+        <span class="fa fa-bars px-2"></span>
+      </span>
+
+      <ul class="menu d-flex m-0" *ngIf="isMenuOpen || !isSmallScreen">
+        <li [ngClass]="{'active': currentPage === 'home'}">
+          <a routerLink="/home" (click)="setActivePage('home')">Home</a>
+        </li>
+        <li class="dropdown" [ngClass]="{'active': currentPage === 'tours'}">
+          <a routerLink="/places" (click)="setActivePage('tours')">Tours</a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/places" (click)="setActivePage('tours')">All Tours</a></li>
+            <li><a routerLink="/cairo" (click)="setActivePage('Cairo')">Cairo</a></li>
+          </ul>
+        </li>
+        <li [ngClass]="{'active': currentPage === 'gallery'}">
+          <a routerLink="/gallery" (click)="setActivePage('gallery')">Gallery</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

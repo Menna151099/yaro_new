@@ -1,0 +1,30 @@
+.breadcrumb {
+  background-image: url(../../../assets/img/breadcrumb.webp);
+  padding-top: 210px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  text-align: center;
+}
+
+.spad {
+  padding: 100px 0;
+}
+
+.breadcrumb_text {
+  width: 100%;
+  padding: 0 0.75rem;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 46px;
+  font-weight: 700;
+  margin-top: 80px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h2:hover {
+  color: #1c84fb;
+}

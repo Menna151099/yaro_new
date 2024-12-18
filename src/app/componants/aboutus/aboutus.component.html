@@ -1,0 +1,67 @@
+<section class="some-content" id="about">
+  <div class="container py-md-5">
+    <div class="row about-vv-top">
+      <div class="col-lg-6 about-info">
+        <h4 class="title-hny mb-md-4">Yaro Travel</h4>
+        <p class="content-preview">
+          Yaro Travel is A leading company in the field of tourism for more than 25 years and providing many services, such as organizing internal and external tourist trips, leisure trips, business trips and conferences, car rental, hotel and restaurant reservations.....
+        </p>
+        <div class="read-more-button mt-4">
+          <button (click)="showPopup()" class="read-more btn">Read More</button>
+        </div>
+      </div>
+      <div class="col-lg-6 about-img">
+        <img src="assets/img/company.jpg" class="img-fluid" alt="Luxurious Image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Popup -->
+<div *ngIf="isPopupVisible" class="popup-overlay">
+  <div class="popup-content">
+    <span class="close" (click)="closePopup()">&times;</span>
+    <h4 class="title-hny mb-md-4">Yaro Travel</h4>
+
+    <p>Yaro Travel is a leading company in the field of tourism for more than 25 years, providing many services, such as organizing internal and external tourist trips, leisure trips, business trips and conferences, car rental, hotel and restaurant reservations.</p>
+
+    <h5>Company Philosophy:</h5>
+    <p>Providing high-quality tourism services to meet customer needs and achieve their satisfaction through innovation and development in the services provided and continuing to improve them.</p>
+
+    <h5>Services Provided:</h5>
+    <ul>
+      <li>Organizing internal and external tourist trips at prices suitable for all groups.</li>
+      <li>Organizing leisure trips, business trips, and conferences with the highest levels of quality.</li>
+      <li>Car rental with the latest models and the best prices.</li>
+      <li>Hotel and restaurant reservations at competitive prices.</li>
+      <li>Special reservations for places after official working hours.</li>
+    </ul>
+
+    <h5>Experience and Competence:</h5>
+    <p>A tourism company with more than 25 years of experience in the field of tourism and travel, and includes a specialized and highly experienced team in providing tourism services and dealing with customers with high efficiency and professionalism.</p>
+
+    <h5>Partnerships and Relationships:</h5>
+    <p>The company cooperates with a number of local and international suppliers and partners to provide high-quality tourism services, and the company is also keen to build and maintain good relationships with customers.</p>
+
+    <h5>The Meaning of 👑Yaro👑:</h5>
+    <p>
+      He believed that there was a paradise for the righteous, which he called (Yaro), meaning the fields of Osiris.<br>
+      He also believed that there was fire and hell for the wicked, and he called it (Saj).<br>
+      That is why he believed in the existence of a decisive trial for the dead after death for each deceased before (Osiris), the god of the afterlife and the Lord of the world.<br>
+      The dead must have a fair trial for every human being to be punished for what he committed during his first life. If it was good, then good, and if it was evil, then evil. <br>
+      Al-Kriti mentioned that the ancient Egyptians, after death, believed that their stay in the grave was not eternal, but rather there was a trial to another life, which is eternal and immortal life, which is what was expressed in the ancient Egyptian language <br>
+      “De Ankhjet Jah” and translated as “to give life or eternity,” which She used to seal all their prayers at the graves.<br>
+      We find that the ancient Egyptian recorded in the book “Gates”: <br>
+      “Your bodies will rise for you... Your bones will join for you... They will remove the mummy’s shrouds from you and throw aside the mummy’s masks... Free yourself from what bores you so that you can enjoy the yarrow fields of Paradise.” ».<br>
+      The ancient Egyptian considered the paradise “Yarrow” or the fields of the god Osiris, as stated in the Book of the Dead, Spell 110, to be rivers of water flowing in blue, and among them were the fields of “Osiris”.<br>
+      The deceased sailed freely in these rivers with a small boat carried by him alone, and in some The scenes show his wife behind him in the fields of Osiris, and another scene represents him sitting in front of the sacrificial table, eating and drinking food, fruits, and drinks.<br>
+      Pictures include “bread - beer - onions - meat - lettuce - ducks - geese,” and among the fruits are “pomegranates, grapes, Figs” and imagined that this paradise is under the ground, and the reason for this is the burial of the deceased under the ground in the cemetery, and the presence of rivers stems from digging wells and the water coming out of them, so he saw that this paradise for the afterlife is under the ground with many rivers from which the fields of Osiris are irrigated.<br>
+      Just as the ancient Egyptian believed in heaven for the righteous, he also believed in hell or hell for the wicked. He called it “Saj,” which means “fire” in the ancient Egyptian language.<br>
+      The ancient Egyptian imagined it as it appeared on the papyrus leaves in the Book of the Dead, Incantation No. 17. It is a red lake, into which evil people are thrown and their bodies are burned. <br>This lake is surrounded by a thick black wall, which has no entrance or exit, and is completely closed. At the four corners of this lake, we find eight or four monkeys sitting on chairs guarding this lake or hell, to prevent sinners from escaping.<br>
+      There are many depictions of hell or fire in many papyri and cemetery scenes, although the details differ, but the content and origin are the same, which is the depiction of burning sinners in the lake of fire with their heads cut off, their arms tied, and in some scenes in an upside down position.
+    </p>
+    <h5>#Discover_the_world_with_yaro</h5>
+  </div>
+</div>
+
+

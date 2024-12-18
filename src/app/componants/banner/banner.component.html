@@ -1,0 +1,47 @@
+<div class="banner" id="home">
+  <div class="layer">
+    <div class="container">
+      <div class="row">
+        <!-- Banner Text Section -->
+        <div class="col-md-6 banner-text-w3ls">
+          <div class="csslider infinity">
+            <ul class="banner_slide_bg">
+              <li *ngFor="let slide of slides; let i = index" [class.active]="i === activeSlide">
+                <div class="container-fluid">
+                  <div class="w3ls_banner_txt">
+                    <h3 class="b-w3ltxt text-capitalize mt-md-4">{{ getCountryName(i) }}</h3>
+                    <h4><span class="fa fa-ils" aria-hidden="true"></span> from</h4>
+                    <p><span class="fa fa-usd" aria-hidden="true"></span>{{ getPrice(i) }}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Navigation -->
+            <div class="navigation">
+              <div>
+                <label *ngFor="let slide of slides; let i = index" (click)="setActiveSlide(i)" [class.active]="i === activeSlide"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner Form Section -->
+        <div class="col-md-6 px-lg-3 px-0">
+          <div class="banner-form-w3 ml-lg-5">
+            <div class="padding">
+              <form action="#" method="post">
+                <h5 class="mb-3">Search Our Tours</h5>
+                <div class="form-style-w3layout">
+                  <input placeholder="Search Location" name="name" type="text" required>
+                  <input placeholder="Price Range" name="price" type="text" required>
+                </div>
+                <button class="btn"> Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

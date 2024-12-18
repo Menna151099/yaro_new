@@ -1,0 +1,139 @@
+/* Container spacing */
+.places.spad {
+  padding: 40px 20px;
+}
+
+/* Grid layout for responsive cards */
+.places__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; /* Space between cards */
+}
+
+/* Individual card styling */
+.places__item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.places__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Media container (image/video) */
+.responsive-media {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background-color: #f0f0f0; /* Fallback background */
+}
+
+.View {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 130px;
+}
+
+/* Button styles */
+.places__view-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ffa339; /* Green background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  text-transform: uppercase; /* Optional: Make text uppercase */
+  text-decoration: none; /* Optional: Remove underline if styled as a link */
+}
+
+.places__view-btn i {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 16px; /* Icon size */
+}
+
+/* Button hover effect */
+.places__view-btn:hover {
+  background-color: #ffca39; /* Darker green */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Button focus effect */
+.places__view-btn:focus {
+  outline: 2px solid #ffca39; /* Focus outline for accessibility */
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .places__view-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+.responsive-media video,
+.responsive-media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures media fills the container proportionally */
+}
+
+/* Card content styling */
+.places__item__text {
+  padding: 15px;
+  text-align: left;
+}
+
+.places__item__text h4 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.places__item__text p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #777;
+}
+
+.places__item__text .price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffca39; /* Green color for price */
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .places.spad {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .places__item__text h4 {
+    font-size: 16px;
+  }
+
+  .places__item__text p {
+    font-size: 12px;
+  }
+
+  .places__item__text .price {
+    font-size: 14px;
+  }
+}

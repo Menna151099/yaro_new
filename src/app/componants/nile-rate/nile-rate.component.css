@@ -1,0 +1,315 @@
+.placesDetails__content {
+  margin: 5% auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.package{
+  list-style: none;
+}
+
+.placesDetails__title {
+  margin-bottom: 40px;
+}
+
+a{
+  text-decoration: none;
+}
+.book .CartBtn {
+  width: 140px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background-color: rgb(255, 140, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+}
+
+.book .IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.5s;
+}
+
+.book .icon {
+  border-radius: 1px;
+}
+
+.book .text {
+  padding-top: 15px;
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  transition-duration: 0.5s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+  transition-duration: 0.5s;
+}
+
+.CartBtn:hover .text {
+  transform: translate(10px, 0px);
+  transition-duration: 0.5s;
+}
+
+.CartBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.5s;
+}
+
+.book{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.placesDetails__title h2,
+.placesDetails__desc h4 {
+  color: #1D2A3B;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h2, h4, p {
+  font-family: "Nunito Sans", sans-serif;
+  color: #111111;
+  font-weight: 400;
+}
+
+p {
+  font-size: 15px;
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+
+.tour{
+  color: blueviolet;
+}
+
+.color{
+ color: brown;
+ font-weight: bold;
+}
+
+.detael{
+  color:#150999;
+  font-weight: 600;
+  background-color: aquamarine;
+  width: 40%;
+}
+.star {
+  display: flex;
+  font-size: 15px;
+  gap: 10px;
+}
+
+.fa-star {
+  color: #F9B71C;
+  font-size: 15px;
+}
+
+.fa-map-marker-alt{
+  color: #4657F0;
+}
+.placesDetails__rating__widget,.placesDetails__rating__widget span{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.placesDetails__info {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 32px 0;
+}
+
+.placesDetails__info__item {
+  display: flex;
+  gap: 15px;
+  text-align: start;
+  flex-wrap: wrap;
+}
+
+.placesDetails__info__item img {
+  max-width: 100%;
+}
+
+.placesDetails__info__item h6 {
+  font-size: 15px;
+  color: #1D2A3B;
+  margin-top: 15px;
+}
+
+.placesDetails__video {
+  padding: 32px 0 30px;
+}
+
+.placesDetails__video__pop {
+  position: relative;
+  background-image: url('../../../assets/img/alex.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 535px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.placesDetails__video__pop:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 35px;
+  color: #4657F0;
+}
+
+/* Popup Styles */
+.video-popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.video-popup.show {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.video-popup__content {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+
+.video-popup__close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #F9B71C;
+  width: 30px;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .placesDetails__content {
+    margin: 5% 2%;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .placesDetails__info__item {
+    flex-basis: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .placesDetails__content {
+    margin: 5% 1%;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .placesDetails__info__item {
+    flex-basis: 100%;
+  }
+
+  .placesDetails__video__pop {
+    height: 300px;
+  }
+
+  .play-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .placesDetails__content {
+    margin: 10px;
+  }
+
+  .placesDetails__title h2 {
+    font-size: 24px;
+  }
+
+  .placesDetails__desc h4 {
+    font-size: 16px;
+  }
+
+  .star {
+    font-size: 14px;
+  }
+
+  .fa-star {
+    font-size: 14px;
+  }
+}
